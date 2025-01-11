@@ -1,0 +1,90 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+    color: #2D3748;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    width: 90%;
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    color: #1A365D;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -2px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.controls button {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex: 1;
+    max-width: 180px;
+}
+
+#start {
+    background-color: #4F46E5;
+}
+
+#start:hover {
+    background-color: #4338CA;
+    transform: translateY(-2px);
+}
+
+#reset {
+    background-color: #EF4444;
+}
+
+#reset:hover {
+    background-color: #DC2626;
+    transform: translateY(-2px);
+}
+
+#toggle-mode {
+    background-color: #8B5CF6;
+}
+
+#toggle-mode:hover {
+    background-color: #7C3AED;
+    transform: translateY(-2px);
+}
+
+.status {
+    margin-top: 1rem;
+}
+
+#status-text {
+    font-size: 1.1rem;
+    color: #4A5568;
+    font-weight: 500;
+    margin: 0;
+} 
