@@ -12,8 +12,16 @@ const toggleModeButton = document.getElementById('toggle-mode');
 function updateDisplay() {
     const minutes = Math.floor(timeLeft / 60);
     const seconds = timeLeft % 60;
-    minutesDisplay.textContent = minutes.toString().padStart(2, '0');
-    secondsDisplay.textContent = seconds.toString().padStart(2, '0');
+    const minutesStr = minutes.toString().padStart(2, '0');
+    const secondsStr = seconds.toString().padStart(2, '0');
+    minutesDisplay.textContent = minutesStr;
+    secondsDisplay.textContent = secondsStr;
+    
+    // Update title
+    const newTitle = `${minutesStr}:${secondsStr} - Pomodoro Timer`;
+    if (document.title !== newTitle) {
+        document.title = newTitle;
+    }
 }
 
 function startTimer() {
@@ -55,6 +63,14 @@ function toggleMode() {
     toggleModeButton.textContent = isWorkTime ? 'Switch to Break' : 'Switch to Work';
     updateDisplay();
 }
+
+// Remove any existing favicons and set empty favicon
+const existingFavicons = document.querySelectorAll('link[rel*="icon"]');
+existingFavicons.forEach(favicon => favicon.remove());
+const emptyFavicon = document.createElement('link');
+emptyFavicon.rel = 'icon';
+emptyFavicon.href = 'data:,';  // Empty favicon
+document.head.appendChild(emptyFavicon);
 
 // Initialize the timer
 timeLeft = 25 * 60;
